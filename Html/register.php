@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+include("conect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +22,49 @@
         <h1 class="t_center" >LOG IN</h1>
         <br>
          <form action="" method="POST" class="t_center">
-             User Name : <br><br>
-             <input type="text" name="username" placeholder="Enter Username"> <br><br>
+
+         Name : <br><br>
+             <input type="name" name="name" placeholder="Enter Username"> <br><br>
+             Institute : <br><br>
+             <input type="institue" name="institute" placeholder="Enter Institute"> <br><br>
+            Email : <br><br>
+             <input type="email" name="email" placeholder="Enter Email"> <br><br>
              Password : <br><br>
              <input type="password" name="password" placeholder="Enter Password"> <br><br>
  
-             <input type="submit" value="Log In"  name="submit" class="btn">
-             <input type="submit" value="Register"  name="submit" class="btn">
+             <input type="submit" value="Register"  name="register" class="btn">
+             
              
          </form>
      </div>
 </body>
 </html>
+<?php
+if(isset($_POST['register'])){ 
+
+    
+$Name=$_POST['name'];
+$inst=$_POST['institute'];
+$email=$_POST['email'];
+$password=$_POST['password'];
+
+if (filter_var($email,FILTER_VALIDATE_EMAIL)) {
+
+    
+$sql22="select max(id) as id from student";
+   if($res22=mysqli_query($con,$sql22)){
+    $row=mysqli_fetch_assoc($res22);
+    $sno=$row['id']+1;
+}
+else "error ";
+
+$sql3="INSERT INTO `student`(`id`, `name`, `Institue`, `email`, `password`) VALUES ('$sno','$Name','$inst','$email','$password')";
+$res=mysqli_query($con,$sql3);
+}
+else{
+    echo("$email is not a valid email address");
+}
+
+}
+
+?>

@@ -1,3 +1,9 @@
+
+<?php
+
+session_start();
+include("conect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +23,38 @@
         <h1 class="t_center" >LOG IN</h1>
         <br>
          <form action="" method="POST" class="t_center">
-             User Name : <br><br>
+
+         <!-- Name : <br><br>
              <input type="text" name="username" placeholder="Enter Username"> <br><br>
+             Institute : <br><br>
+             <input type="text" name="institute" placeholder="Enter Institute"> <br><br> -->
+            Name : <br><br>
+             <input type="text" name="Name" placeholder="Enter Name"> <br><br>
              Password : <br><br>
              <input type="password" name="password" placeholder="Enter Password"> <br><br>
  
-             <input type="submit" value="Log In"  name="submit" class="btn">
-             <input type="submit" value="Register"  name="submit" class="btn">
+             <input type="submit" value="Log In"  name="login" class="btn">
+             <a href="register.php" class="btn">Sign-Up</a>
              
          </form>
      </div>
 </body>
 </html>
+<?php
+ if(isset($_POST['login'])){ 
+      $name=$_POST['Name'];
+        $password=($_POST['password']);
+   $sql="SELECT * FROM `student` WHERE name='$name' && password='$password'";
+      $res=mysqli_query($con,$sql);
+      if(mysqli_num_rows($res)>0){
+          header('location:quiz.php');
+      }
+   else{
+//        //  $_SESSION['login']="<div class='error text-center'>Name or Password didn't match.</div>";
+      header('location:login.php');
+    }
+
+   }
+
+
+  ?>
