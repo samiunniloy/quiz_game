@@ -8,7 +8,7 @@ include("../Html/conect.php");
         <br>
         <br>
         <form action=""method="POST">
-            <table class="add-admin">
+            <table class="login">
                 
                 <tr>
                     <td>Name:</td>
@@ -19,7 +19,7 @@ include("../Html/conect.php");
                 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="LOg in" class="btn-second">
+                        <input type="submit" name="submit" value="Log in" class="btn-second">
 
                     </td>
                 </tr>
@@ -33,7 +33,7 @@ include("../Html/conect.php");
 <?php
     if(isset($_POST['submit'])){
         $email=$_POST['email'];
-        $password=md5($_POST['password']);
+        $password=($_POST['password']);
         $sql="SELECT * FROM teacher where name='$email' AND password='$password'";
         $res=mysqli_query($con,$sql);
         $count=mysqli_num_rows($res);

@@ -2,66 +2,60 @@
 session_start();
 include("../Html/conect.php");
 ?>
-<div class="main">
-    <div class="wrapper">
-        <h1>Add Instructor</h1>
-        <br>
-        <br>
-        <form action=""method="POST">
-            <table class="add-admin">
-                
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text"name="name" placeholder="Enter your name"></td>
-                </tr>
-                <td>Password:</td>
-                   <td> <input type="password" name="password"placeholder="Enter Password"></td>
-                <tr>
-                    <td>Institution:</td>
-                    <td><input type="text"name="institute" placeholder="Enter your Institute"></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><input type="text"name="email" placeholder="Enter your Email"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-second">
-
-                    </td>
-                </tr>
-                
-            </table>
-        </form>
-    </div>
-</div>
-
-
 <?php
-if(isset($_POST['submit'])){ 
-    
-$Name=$_POST['name'];
-$inst=$_POST['institute'];
-$email=$_POST['email'];
-$password=$_POST['password'];
-
-if (filter_var($email,FILTER_VALIDATE_EMAIL)) {
-
-$sql22="select max(id) as id from teacher";
+$sql="SELECT * FROM `temp` ";
+    $res=mysqli_query($con,$sql);
+      $count=mysqli_num_rows($res);
+      while($rows=mysqli_fetch_assoc($res))
+      {
+          $name=$rows['name'];
+          $inst=$rows['institute'];
+          $email=$rows['email'];
+          $password=$rows['password'];
+          $sno=$rows['id'];
+          ?>
+          <html>
+  <div>
+  <table class="admin">
+             <tr>
+                 <th>Name</th>
+                 <th>Email</th>
+                 <th>Institute</th>
+                 
+             </tr>          
+</div>
+ </html>
+          
+           <tr>
+           <form action="" method="POST">
+               <td><?php echo $name; ?></td>
+               <td><?php echo $email; ?></td>
+               <td><?php echo $inst; ?></td>   
+                <input type="submit" name="add" value="Accept" class="btn-second">
+                <input type="submit" name="delete" value="Delete" class="btn-second">
+                </form>
+              <br>
+              <br>
+           </tr>
+           <?php
+          }
+if(isset($POST["add"])){
+    $sql22="select max(id) as id from teacher";
    if($res22=mysqli_query($con,$sql22)){
     $row=mysqli_fetch_assoc($res22);
-    $sno=$row['id']+1;
+    $sid=$row['id']+1;
 }
 else "error ";
-
-$sql3="INSERT INTO `teacher`(`id`, `name`, `institute`, `email`, `password`) VALUES ('$sno','$Name','$inst','$email','$password')";
+$sql3="INSERT INTO `teacher`(`id`, `name`, `institute`, `email`, `password`) VALUES ('$sid','$name','$inst','$email','$password')";
 $res=mysqli_query($con,$sql3);
-header('location:admin_login.php');
+$sql4="DELETE FROM `temp` WHERE id=$sno";
+$res1=mysqli_query($con,$sql4);
+header('location:quiz.php');
 }
-else{
-    echo("$email is not a valid email address");
+else if(isset($POST["delete"])){
+    $sql4="DELETE FROM `temp` WHERE id=$sno";
+    $res1=mysqli_query($con,$sql4);
 }
 
-}
 
 ?>
