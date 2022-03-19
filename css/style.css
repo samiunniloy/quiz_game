@@ -78,6 +78,23 @@ section{
 .btn:hover{
     letter-spacing: .2rem;
 }
+.btn1{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:rgb(255, 255, 255);
+    background: #5690a1;
+    cursor: pointer;
+}
+
+.btn1:hover{
+    letter-spacing: .2rem;
+    background-color: #ffe83a;
+}
+.mar25{
+    padding-top: 7%;;
+}
 
 
 .header{
@@ -123,6 +140,47 @@ section{
     color:var(--main-color);
 }
 
+.header1{
+    background: rgba(1, 1, 138, 0.822) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+.header1 .logo img{
+    height: 6rem;
+}
+
+.header1 .navbar a{
+    margin:0 2rem;
+    font-size: 2rem;
+    color:#ffe83a;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    
+}
+
+.header1 .navbar a:hover{
+    color: rgb(255, 255, 255);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+    letter-spacing: 0.7rem;
+}
+
+.header1 .icons div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header1 .icons div:hover{
+    color:var(--main-color);
+}
 #menu-btn{
     display: none;
 }
@@ -202,7 +260,11 @@ section{
 .menu .box-container .box img{
     height: 10rem;
 }
-
+.menu .box-container .box h1{
+    color: black;
+    font-size: 4rem;
+    padding:1rem 0;
+} 
 .menu .box-container .box h3{
     color: black;
     font-size: 2rem;
@@ -227,7 +289,7 @@ section{
 }
 
 .menu .box-container .box:hover > *{
-    color:var(--black);
+    color:rgb(0, 80, 252);
 }
 
 
@@ -424,7 +486,9 @@ section{
 .footer .credit span{
     color:var(--main-color);
 }
-
+.log_in form input{
+    margin: 5px;
+}
 
 
 

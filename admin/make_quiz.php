@@ -1,36 +1,32 @@
 <?php
 session_start();
 include("../Html/conect.php");
+include("./header.php");
 ?>
 
-<div class="main">
-    <div class="wrapper">
-        <h1>Make quiz</h1>
-        <br>
-        <br>
-        <form action=""method="POST">
-            <table class="add-admin">
-                
-                <tr>
-                    <td>title:</td>
-                    <td><input type="text"name="title" placeholder="Enter your name"></td>
-                </tr>
-                <tr>
-                <td>Subject:</td>
-                   <td> <input type="password" name="Subject"placeholder="Enter Password"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                    <td>Be sure you wanna create this quiz:</td>
-                        <input type="submit" name="submit" value="Create" class="btn-second">
+<section class="mar25">
+<div class="log_in ">
+        <br><br>
+        <h1 class="t_center" >Start Quiz</h1>
+        <br>  
+        <form action=""method="POST" class="t_center">
 
-                    </td>
-                </tr>
+                title: <br>
+                <input type="text"name="title" placeholder="Enter your name"> <br>
                 
-            </table>
+                
+                Quiz Type: <br>
+                 <input type="password" name="Subject"placeholder="Enter Password"> <br>
+                
+
+                 <br>Be sure you wanna create this quiz: <br><br>
+                        <input type="submit" name="submit" value="Create" class="btn1"><br>
+
+                     
+        
         </form>
     </div>
-</div>
+</section>
 <?php
 if(isset($_POST['submit'])){
 $subj=$_POST['Subject'];

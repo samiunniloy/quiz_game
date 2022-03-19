@@ -1,41 +1,37 @@
 <?php
 session_start();
 include("../Html/conect.php");
+include("./header.php")
 ?>
-<div class="main">
-    <div class="wrapper">
-        <h1>Add Instructor</h1>
+<section class="mar25">
+<div class="log_in ">
+        <br><br>
+        <h1 class="t_center" >Add Admin</h1>
         <br>
-        <br>
-        <form action=""method="POST">
-            <table class="add-admin">
+         <form action="" method="POST" class="t_center">
                 
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text"name="name" placeholder="Enter your name"></td>
-                </tr>
-                <td>Password:</td>
-                   <td> <input type="password" name="password"placeholder="Enter Password"></td>
-                <tr>
-                    <td>Institution:</td>
-                    <td><input type="text"name="institute" placeholder="Enter your Institute"></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><input type="text"name="email" placeholder="Enter your Email"></td>
-                </tr>
-                <tr>
+                
+                    Name:
+                    <input type="text"name="name" placeholder="Enter your name"> <br><br>
+                
+                Password:
+                    <input type="password" name="password"placeholder="Enter Password"> <br><br>
+               
+                    Institution:
+                    <input type="text"name="institute" placeholder="Enter your Institute"> <br><br>
+                
+               
+                    Email:
+                    <input type="text"name="email" placeholder="Enter your Email"> <br><br>
+                
+               
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-second">
+                        <input type="submit" name="submit" value="Add Admin" class="btn">
 
-                    </td>
-                </tr>
-                
-            </table>
         </form>
-    </div>
+    
 </div>
-
+</section>
 
 <?php
 if(isset($_POST['submit'])){ 
@@ -56,7 +52,7 @@ else "error ";
 
 $sql3="INSERT INTO `temp`(`id`, `name`, `institue`, `email`, `password`) VALUES ('$sno','$Name','$inst','$email','$password')";
 $res=mysqli_query($con,$sql3);
-header('location:quiz.php');
+header('location:../index.php');
 
 }
 else{

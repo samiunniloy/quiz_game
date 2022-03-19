@@ -1,33 +1,31 @@
 <?php
 session_start();
 include("../Html/conect.php");
+include("./header.php");
 ?>
-<div class="main">
-    <div class="wrapper">
-        <h1>Teacher log in</h1>
-        <br>
-        <br>
-        <form action=""method="POST">
-            <table class="login">
+<section class="mar25">
+<div class="log_in ">
+        <br><br>
+        <h1 class="t_center" >Add Question</h1>
+        <br>  
+        <form action=""method="POST" class="t_center">
+            
                 
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text"name="email" placeholder="Enter your email"></td>
-                </tr>
-                <td>Password:</td>
-                   <td> <input type="password" name="password"placeholder="Enter Password"></td>
                 
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submit" value="Log in" class="btn-second">
+                    Name: <br>
+                    <input type="text"name="email" placeholder="Enter your email"><br>
+              
+                Password:<br>
+                    <input type="password" name="password"placeholder="Enter Password"><br>
+                
+                
+                        <input type="submit" name="submit" value="Log in" class="btn">
 
-                    </td>
-                </tr>
-                
-            </table>
+                    <br>
+
         </form>
     </div>
-</div>
+</section>
 
 
 <?php
