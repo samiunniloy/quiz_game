@@ -62,7 +62,6 @@ while($_rows=mysqli_fetch_assoc($res1)){
                <td type="radio" name="c">C</td> 
                <td type="radio" name="d">D</td>
                
-
            </tr>
            <?php
            }?>
