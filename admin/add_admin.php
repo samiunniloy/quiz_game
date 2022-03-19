@@ -39,7 +39,7 @@ $sql="SELECT * FROM `temp` ";
            </tr>
            <?php
           }
-if(isset($POST["add"])){
+if(isset($_POST["add"])){
     $sql22="select max(id) as id from teacher";
    if($res22=mysqli_query($con,$sql22)){
     $row=mysqli_fetch_assoc($res22);
@@ -50,7 +50,7 @@ $sql3="INSERT INTO `teacher`(`id`, `name`, `institute`, `email`, `password`) VAL
 $res=mysqli_query($con,$sql3);
 $sql4="DELETE FROM `temp` WHERE id=$sno";
 $res1=mysqli_query($con,$sql4);
-header('location:quiz.php');
+header('location:add_admin.php');
 }
 else if(isset($POST["delete"])){
     $sql4="DELETE FROM `temp` WHERE id=$sno";
