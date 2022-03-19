@@ -44,20 +44,22 @@ while($_rows=mysqli_fetch_assoc($res1)){
            <form action="" method="POST">
            
                <td type="radio"><?php echo $ques; ?></td>
-               <td><?php echo $a; ?></td>
-               <td><?php echo $b; ?></td> 
-               <td><?php echo $c; ?></td>
-               <td><?php echo $d; ?></td> 
-               <td><?php echo $ans; ?></td> 
+               <td type="radio"><?php echo $a; ?></td>
+               <td type="radio"><?php echo $b; ?></td> 
+               <td type="radio"><?php echo $c; ?></td>
+               <td type="radio"><?php echo $d; ?></td> 
+               <td type="radio"><?php echo $ans; ?></td> 
 
-                <input type="submit" name="add" value="Add" class="btn-second">
+                <!-- <input type="submit" name="add" value="Add" class="btn-second"> -->
                 <!-- <input type="submit" name="next" value="next" class="btn-second"> -->
                 </form>
               <br>
               <br>
            </tr>
            <?php
-           }
+           }?>
+           <input type="submit" name="add" value="Add" class="btn-second">
+           <?php
           
 if(isset($_POST["add"])){
            
