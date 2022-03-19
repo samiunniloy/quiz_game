@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../Html/conect.php");
+$sn0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,16 +53,19 @@ include("../Html/conect.php");
 $sql="SELECT * FROM `quiz_table` ";
     $res=mysqli_query($con,$sql);
       $count=mysqli_num_rows($res);
+      $n=0;
       while($rows=mysqli_fetch_assoc($res))
       {
-          $title=$rows['title'];
-          $subj=$rows['subj'];
-          ;
-          $sno=$rows['id'];
+          $title[$n]=$rows['title'];
+          $subj[$n]=$rows['subject'];
+          $sno [$n]=$rows['id'];
+          $n++;
+      }
           ?>
           <html>
   <div>
   <table class="admin">
+    <?php for($i=0;$i<$n;$i++) { ?>
              <tr>
                  <th>Title</th>
                  <th>Subject</th>
@@ -71,22 +75,20 @@ $sql="SELECT * FROM `quiz_table` ";
           
            <tr>
            <form action="" method="POST">
-               <td><?php echo $title; ?></td>
-               <td><?php echo $subj; ?></td>
+               <td><?php echo $title[$i];?></td>
+               <td><?php echo $subj[$i];?></td>
                  
-                <input type="submit" name="add" value="Accept" class="btn-second">
-                <!-- <input type="submit" name="delete" value="Delete" class="btn-second"> -->
+               <td><a href="<?php echo 'http://localhost/quiz_game-main/Html/'?>exam.php?id=<?php echo $sno[$i]?>" class="btn">Start</a></td>
+                <!-- <input type="submit" name="add" value="add" class="btn-second"> -->
                 </form>
               <br>
               <br>
            </tr>
            <?php
           }
-if(isset($_POST["add"])){
-    
-header('location:exam.php');
-}
+// if(isset($_POST["add"])){
+// header( "location:exam.php");
 
-
-
+// }
 ?>
+
