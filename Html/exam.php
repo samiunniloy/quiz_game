@@ -39,22 +39,30 @@ while($_rows=mysqli_fetch_assoc($res1)){
              </tr>          
 </div>
  </html>
-          
+ <td><?php echo $ques; ?></td>
            <tr>
            <form action="" method="POST">
            
-               <td type="radio"><?php echo $ques; ?></td>
-               <td type="radio"><?php echo $a; ?></td>
-               <td type="radio"><?php echo $b; ?></td> 
-               <td type="radio"><?php echo $c; ?></td>
-               <td type="radio"><?php echo $d; ?></td> 
-               <td type="radio"><?php echo $ans; ?></td> 
+              
+               <td ><?php echo $a; ?></td>
+               <td><?php echo $b; ?></td> 
+               <td><?php echo $c; ?></td>
+               <td><?php echo $d; ?></td> 
+                
 
                 <!-- <input type="submit" name="add" value="Add" class="btn-second"> -->
                 <!-- <input type="submit" name="next" value="next" class="btn-second"> -->
                 </form>
               <br>
               <br>
+           </tr>
+           <tr>
+               <td type="radio" name="a">A</td>
+               <td type="radio" name="b">B</td>
+               <td type="radio" name="c">C</td> 
+               <td type="radio" name="d">D</td>
+               
+
            </tr>
            <?php
            }?>
