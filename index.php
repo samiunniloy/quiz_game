@@ -28,7 +28,7 @@
         <nav class="navbar">
             <a href="http://localhost/quiz_game-main/index.php">home</a>
             <a href=".\Html\course.html">Course</a>
-            <a href="localhost/quiz_game-main/Html/quiz.php">Quiz</a>
+            <a href="http://localhost/quiz_game-main/Html/quiz.php">Quiz</a>
             <a href=".\Html\result.html">results</a>
             <a href=".\Html\contact.html">contact</a>
         </nav>
