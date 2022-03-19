@@ -1,46 +1,48 @@
 <?php
 session_start();
 include("../Html/conect.php");
+include("./header.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+<section class="mar25">
+<div class="log_in ">
+        <br><br>
+        <h1 class="t_center" >Add Question</h1>
+        <br>  
 <form action=""method="POST">
-            <table class="login">
-            <tr>
-                    <td>Subject:</td>
-                    <td><input type="text"name="subject" placeholder="Enter your email"></td>
-                </tr>
-                <tr>
-                    <td>The Question:</td>
-                    <td><input type="text"name="ques" placeholder="Enter your email"></td>
-                </tr>
-                <td>Choices:</td>
-                   <td> <input type="txt" name="a"placeholder="Enter Password"></td>
-                   <td> <input type="txt" name="b"placeholder="Enter Password"></td>
-                   <td> <input type="txt" name="c"placeholder="Enter Password"></td>
-                   <td> <input type="txt" name="d"placeholder="Enter Password"></td>
-                <tr>
-                <tr>
-                    <td>The ans:</td>
-                    <td><input type="text"name="ans" placeholder="Enter your email"></td>
-                </tr>
-                    <td colspan="2">
-                        <input type="submit" name="submit" value="submit" class="btn-second">
-
-                    </td>
-                </tr>
+            
+                    Subject: <br>
+                    <input type="text"name="subject" placeholder="Enter your Catagory"><br>
                 
-            </table>
+                
+                    The Question:<br>
+                    <input type="text"name="ques" placeholder="Enter Question Title"><br>
+                
+                Options:<br><br>
+                   A) &nbsp; <input type="txt" name="a"placeholder="Enter Your Option"><br>
+                   B) &nbsp; <input type="txt" name="b"placeholder="Enter Your Option"><br>
+                   C) &nbsp; <input type="txt" name="c"placeholder="Enter Your Option"><br>
+                   D) &nbsp; <input type="txt" name="d"placeholder="Enter Your Option"><br><br>
+                
+                
+                    The Correct Option:<br>
+                    <input type="text"name="ans" placeholder="Enter Answer"><br>
+                
+
+                        <input type="submit" name="submit" value="submit" class="btn">
+
+                    <br>
+                
+           
         </form>
-        
+
+        <!-- <select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select> -->
+</div>  
+</section>   
 </body>
 </html>
 <?php

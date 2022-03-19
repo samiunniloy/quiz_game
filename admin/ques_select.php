@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../Html/conect.php");
+include("./header.php");
 ?>
 <?php
 
@@ -32,7 +33,7 @@ $sql="SELECT * FROM `ques` WHERE subj='$subj' and id<>all(SELECT `id` FROM `$id`
         $sub=$_rows['subj'];
         $qid=$_rows['id'];
           ?>
-          <html>
+
   <div>
   <table class="admin">
              <tr>
