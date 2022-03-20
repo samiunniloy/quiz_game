@@ -2,8 +2,6 @@
 session_start();
 include("../Html/conect.php");
 include("./header.php");
-?>
-<?php
 
 $sql11="select max(id) as id from quiz_table";
 $res=mysqli_query($con,$sql11);
@@ -22,6 +20,27 @@ $subj=$row1['subject'];
 $sql="SELECT * FROM `ques` WHERE subj='$subj' and id<>all(SELECT `id` FROM `$id`)";
     $res=mysqli_query($con,$sql);
       $count=mysqli_num_rows($res);
+      ?>
+<section class="mar25 ">
+  <div class="tb">
+      <h1>Add Question</h1>
+      <h2><?php
+      if($count==0) echo "There is no Question.";
+      ?>
+      </h2>
+  <table>
+             <tr>
+             <th>Question</th>
+                 <th>A </th>
+                 <th>B</th>
+                 <th>C</th>
+                 <th>D</th>
+                 <th>Answer</th>
+                 <th>Action Button</th>
+                 
+             </tr> 
+
+      <?php
       while($_rows=mysqli_fetch_assoc($res))
       {
         $ques=$_rows['ques'];
@@ -33,22 +52,8 @@ $sql="SELECT * FROM `ques` WHERE subj='$subj' and id<>all(SELECT `id` FROM `$id`
         $sub=$_rows['subj'];
         $qid=$_rows['id'];
           ?>
+          <tr class="wh">
 
-  <div>
-  <table class="admin">
-             <tr>
-                 <th>Question</th>
-                 <th>A </th>
-                 <th>B</th>
-                 <th>C</th>
-                 <th>D</th>
-                 <th>Answer</th>
-                 
-             </tr>          
-</div>
- </html>
-          
-           <tr>
            <form action="" method="POST">
            
                <td><?php echo $ques; ?></td>
@@ -58,11 +63,10 @@ $sql="SELECT * FROM `ques` WHERE subj='$subj' and id<>all(SELECT `id` FROM `$id`
                <td><?php echo $d; ?></td> 
                <td><?php echo $ans; ?></td> 
 
-                <input type="submit" name="add" value="Add" class="btn-second">
+                <td><input type="submit" name="add" value="Add" class="btn1"> <br><br>
                 <!-- <input type="submit" name="next" value="next" class="btn-second"> -->
-                </form>
-              <br>
-              <br>
+      </td></form>
+
            </tr>
            <?php
           

@@ -17,6 +17,7 @@
     transition: .2s linear;
 }
 
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -286,6 +287,7 @@ section{
 
 .menu .box-container .box:hover{
     background:#fff;
+    margin-bottom: 5%;
 }
 
 .menu .box-container .box:hover > *{
@@ -489,11 +491,46 @@ section{
 .log_in form input{
     margin: 5px;
 }
+.tb{
+    margin: 50px;
+}
+.tb h1{
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    margin: 1%;
 
+}
+.tb h2{
 
+    color: #b90000;
+    margin: 0.5%;
 
+}
 
+table{
+    background-color: #ffe83a;
+    width:98%;
+    margin: 1%;
+    font-size: 12px;
+    text-transform: capitalize;
+    border: 2px solid black ;
+    
+}
+th{
+    font-size: 16px;
+}
+td{
+    text-align: center;
+}
+select{
+    background-color: white;
+    width: 50px;
+    height: 20px;
+    margin: 5px 1px;
+    color: green;
 
+}
 
 
 
@@ -530,6 +567,7 @@ section{
     text-align: center;
     
 }
+
 .log_in h1{
     color: dodgerblue;
     padding: 0.5%;
@@ -538,6 +576,9 @@ section{
 .log_in input{
     border: 2px solid rgb(194, 194, 194);
     padding: 1%;
+}
+.wh{
+    background-color: #fff;
 }
 
 @media (max-width:768px){

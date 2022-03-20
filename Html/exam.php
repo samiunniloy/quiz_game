@@ -1,20 +1,76 @@
 <?php
 session_start();
 include("../Html/conect.php");
-?>
-<?php
+
 $id=$_GET['id'];
 $sql111="SELECT * FROM `$id` natural join ques;";
 $res1=mysqli_query($con,$sql111);
 $count=mysqli_num_rows($res1);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="../images/logo.png" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="http://localhost/quiz_game-main/index.php">home</a>
+            <a href=".\Html\course.html">Course</a>
+            <a href="http://localhost/quiz_game-main/Html/quiz.php">Quiz</a>
+            <a href=".\Html\result.html">results</a>
+            <a href=".\Html\contact.html">contact</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+
+    </header>
+
+<section class="mar25 ">
+  <div class="tb">
+      <h1>Exam!!!</h1>
+      <h2><?php
+      if($count==0) echo "Exam Finished";
+      ?>
+      </h2>
+  <table>
+             <tr>
+                 <th>Question</th>
+                 <th>Option:A</th>
+                 <th>Option:B</th>
+                 <th>Option:C</th>
+                 <th>Option:D</th>
+                 <th>Answer</th>
+                 
+             </tr> 
+
+<?php
+
 while($_rows=mysqli_fetch_assoc($res1)){
-// $title=$row1['title'];
-// $sno=$row1['q_id'];
-// $subj=$row1['subject'];
-// $sql="SELECT * FROM `ques` where id='$sno'";
-//     $res=mysqli_query($con,$sql);
-     
-//       $_rows=mysqli_fetch_assoc($res);
+
       
         $ques=$_rows['ques'];
         $a=$_rows['a'];
@@ -25,47 +81,42 @@ while($_rows=mysqli_fetch_assoc($res1)){
         $sub=$_rows['subj'];
         $qid=$_rows['id'];
           ?>
-          <html>
-  <div>
-  <table class="admin">
-             <tr>
-                 <th>Question</th>
-                 <th>A </th>
-                 <th>B</th>
-                 <th>C</th>
-                 <th>D</th>
-                 <th>Answer</th>
-                 
-             </tr>          
-</div>
- </html>
- <td><?php echo $ques; ?></td>
+
+ 
            <tr>
            <form action="" method="POST">
            
-              
+           <td><?php echo $ques; ?></td>
                <td ><?php echo $a; ?></td>
                <td><?php echo $b; ?></td> 
                <td><?php echo $c; ?></td>
                <td><?php echo $d; ?></td> 
-                
 
-                <!-- <input type="submit" name="add" value="Add" class="btn-second"> -->
-                <!-- <input type="submit" name="next" value="next" class="btn-second"> -->
-                </form>
-              <br>
-              <br>
-           </tr>
-           <tr>
-               <td type="radio" name="a">A</td>
+            <td>
+                 <select name="Answer" >
+                   <option value="a">A</option>
+                   <option value="b">B</option>
+                   <option value="c">C</option>
+                   <option value="d">D</option>
+                 </select>
+            </datalist>
+
+            </td>
+            </form>
+   
+           
+               <!-- <td type="radio" name="a">A</td>
                <td type="radio" name="b">B</td>
                <td type="radio" name="c">C</td> 
-               <td type="radio" name="d">D</td>
+               <td type="radio" name="d">D</td> -->
                
            </tr>
            <?php
            }?>
-           <input type="submit" name="add" value="Add" class="btn-second">
+           </table>
+           <input type="submit" name="add" value="Submit" class="btn1 ">
+        </div>
+        </section>
            <?php
           
 if(isset($_POST["add"])){

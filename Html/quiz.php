@@ -44,11 +44,7 @@ $sn0;
 
 
     </header>
-</body>
 
-
-
-</html>
 <?php
 $sql="SELECT * FROM `quiz_table` ";
     $res=mysqli_query($con,$sql);
@@ -62,33 +58,35 @@ $sql="SELECT * FROM `quiz_table` ";
           $n++;
       }
           ?>
-          <html>
-  <div>
-  <table class="admin">
-    <?php for($i=0;$i<$n;$i++) { ?>
-             <tr>
-                 <th>Title</th>
-                 <th>Subject</th>
-             </tr>          
-</div>
- </html>
+
+<section class="mar25">
+<section class="menu" id="menu">
+<div class="box-container">
+<?php for($i=0;$i<$n;$i++) { ?>
+
+
+
+
+
+    <div class="box">
+    <img src="../images/quiz.png" alt="">
+        <h3><?php echo $title[$i];?></h3>
+        <h3 class="price"><?php echo $subj[$i];?></h3>
+        <a href="<?php echo 'http://localhost/quiz_game-main/Html/'?>exam.php?id=<?php echo $sno[$i]?>" class="btn">Start</a>
+    </div>
+
+
+
+
+
           
-           <tr>
-           <form action="" method="POST">
-               <td><?php echo $title[$i];?></td>
-               <td><?php echo $subj[$i];?></td>
-                 
-               <td><a href="<?php echo 'http://localhost/quiz_game-main/Html/'?>exam.php?id=<?php echo $sno[$i]?>" class="btn">Start</a></td>
-                <!-- <input type="submit" name="add" value="add" class="btn-second"> -->
-                </form>
-              <br>
-              <br>
-           </tr>
+
            <?php
           }
-// if(isset($_POST["add"])){
-// header( "location:exam.php");
 
-// }
 ?>
+</div>
+</section>
+
+</section>
 
