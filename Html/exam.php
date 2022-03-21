@@ -6,6 +6,8 @@ $id=$_GET['id'];
 $sql111="SELECT * FROM `$id` natural join ques;";
 $res1=mysqli_query($con,$sql111);
 $count=mysqli_num_rows($res1);
+$i=0;
+// $status;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,16 +95,19 @@ while($_rows=mysqli_fetch_assoc($res1)){
                <td><?php echo $d; ?></td> 
 
             <td>
-                 <select name="Answer" >
+                  <select name="status[]" >
                    <option value="a">A</option>
                    <option value="b">B</option>
                    <option value="c">C</option>
-                   <option value="d">D</option>
-                 </select>
+                   <option value="d">D</option> 
+                
+                 </select> 
+                
+
             </datalist>
 
             </td>
-            </form>
+           
    
            
                <!-- <td type="radio" name="a">A</td>
@@ -112,19 +117,35 @@ while($_rows=mysqli_fetch_assoc($res1)){
                
            </tr>
            <?php
+          
+          // echo $status[0];
+        
            }?>
            </table>
-           <input type="submit" name="add" value="Submit" class="btn1 ">
+           <input type="submit" name="submit" value="Submit" class="btn1 ">
+           </form>
         </div>
         </section>
            <?php
           
-if(isset($_POST["add"])){
-           
-      $sql12="INSERT INTO `$id`(`id`, `title`, `subj`) VALUES ('$qid','$title','$subj')";
-        $res=mysqli_query($con,$sql12);
-        header('location:ques_select.php');
-
+if(isset($_POST["submit"])){
+        //    echo"kaj korce";
+        $cnn=0;
+        $cnt=0;
+     $ccn=$_POST['status'];
+     $sql111="SELECT * FROM `$id` natural join ques;";
+$res1=mysqli_query($con,$sql111);
+     foreach($ccn as $v){
+        $_rows=mysqli_fetch_assoc($res1);
+         $cnt++;
+         if($v==$_rows['ans']) $cnn++;
+        
+     }
+     echo"Your mark is ";
+     echo$cnn;
+     echo"ot of  ";
+     echo$cnt;
+   
       
     }
 ?>
