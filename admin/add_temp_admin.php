@@ -1,9 +1,10 @@
 <?php
 session_start();
 include("../Html/conect.php");
-include("./header.php")
+// include("./header.php")
 ?>
 <section class="mar25">
+<link rel="stylesheet" href="../css/style.css">
 <div class="log_in ">
         <br><br>
         <h1 class="t_center" >Add Admin</h1>
@@ -27,6 +28,7 @@ include("./header.php")
                
                     <td colspan="2">
                         <input type="submit" name="submit" value="Add Admin" class="btn">
+                        <input type="submit" name="login" value="Log in" class="btn">
 
         </form>
     
@@ -50,7 +52,7 @@ $sql22="select max(id) as id from temp";
 }
 else "error ";
 
-$sql3="INSERT INTO `temp`(`id`, `name`, `institue`, `email`, `password`) VALUES ('$sno','$Name','$inst','$email','$password')";
+$sql3="INSERT INTO `temp`(`id`, `name`, `institute`, `email`, `password`) VALUES ('$sno','$Name','$inst','$email','$password')";
 $res=mysqli_query($con,$sql3);
 header('location:../index.php');
 
@@ -59,6 +61,9 @@ else{
     echo("$email is not a valid email address");
 }
 
+}
+else if(isset($_POST['login'])){
+    header('location:http://localhost/quiz_game-main/admin/admin_login.php'); 
 }
 
 ?>
