@@ -9,31 +9,26 @@ include("./header.php")
 
 <div class="box-container">
 
-    <div class="box">
-        <h1>000</h1>
-        <h3>Total Admin</h3>
-        <a href="#" class="btn1">View Admin</a>
-    </div>
 
     <div class="box">
         <h1>000</h1>
         <h3>Total Teacher</h3>
-        <a href="#" class="btn1">View Teacher</a>
+        <a href="http://localhost/quiz_game-main/admin/admin.php" class="btn1">View Teacher</a>
     </div>
     <div class="box">
         <h1>000</h1>
         <h3>Total Student</h3>
-        <a href="#" class="btn1">View Student</a>
+        <a href="http://localhost/quiz_game-main/admin/student.php" class="btn1">View Student</a>
     </div>
     <div class="box">
         <h1>000</h1>
         <h3>Total Question</h3>
-        <a href="#" class="btn1">View Question</a>
+        <a href="http://localhost/quiz_game-main/admin/question.php" class="btn1">View Question</a>
     </div>
     <div class="box">
         <h1>000</h1>
         <h3>Total Quiz</h3>
-        <a href="#" class="btn1">View Quiz</a>
+        <a href="http://localhost/quiz_game-main/Html/quiz.php" class="btn1">View Quiz</a>
     </div>
 
 
