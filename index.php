@@ -31,6 +31,7 @@
             <a href="http://localhost/quiz_game-main/Html/quiz.php">Quiz</a>
             <a href=".\Html\result.html">results</a>
             <a href=".\Html\contact.html">contact</a>
+            <a href="http://localhost/quiz_game-main/admin/add_temp_admin.php">Admin</a>
         </nav>
 
         <div class="icons">
