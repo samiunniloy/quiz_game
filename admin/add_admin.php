@@ -67,6 +67,7 @@ header('location:add_admin.php');
 else if(isset($POST["delete"])){
     $sql4="DELETE FROM `temp` WHERE id=$sno";
     $res1=mysqli_query($con,$sql4);
+    header('location:add_admin.php');
 }
 
 
