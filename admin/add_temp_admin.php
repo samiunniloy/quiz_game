@@ -26,10 +26,8 @@ include("../Html/conect.php");
                     <input type="text"name="email" placeholder="Enter your Email"> <br><br>
                 
                
-                    <td colspan="2">
                         <input type="submit" name="submit" value="Add Admin" class="btn">
-                        <input type="submit" name="login" value="Log in" class="btn">
-
+                
         </form>
     
 </div>

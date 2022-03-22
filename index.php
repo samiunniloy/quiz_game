@@ -31,7 +31,7 @@
             <a href="http://localhost/quiz_game-main/Html/quiz.php">Quiz</a>
             <a href=".\Html\result.html">results</a>
             <a href=".\Html\contact.html">contact</a>
-            <a href="http://localhost/quiz_game-main/admin/add_temp_admin.php">Admin</a>
+            <a href="http://localhost/quiz_game-main/html/login.php">Log In</a>
         </nav>
 
         <div class="icons">
@@ -50,7 +50,7 @@
         <div class="content">
             <h3>Show Your Talent</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat labore, sint cupiditate distinctio tempora reiciendis.</p>
-            <br><br> <a href="#" class="btn">Join Now</a>
+            <br><br> <a href="http://localhost/quiz_game-main/html/register.php" class="btn">Join Now</a>
         </div>
 
     </section>

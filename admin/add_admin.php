@@ -12,6 +12,8 @@ $sql="SELECT * FROM `temp` ";
       <h2><?php
       if($count==0) echo "There is no pending admin.";
       ?>
+          <a href="http://localhost/quiz_game-main/admin/add_temp_admin.php" class="btn1">Add New Teacher</a>
+  
       </h2>
   <table>
              <tr>

@@ -1,3 +1,5 @@
+<?php 
+include("./Login-chechk.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,10 +29,10 @@
 
         <nav class="navbar">
             <a href="http://localhost/quiz_game-main/index.php">Visite Site</a>
-            <a href=".\Admin_profile.php">Admin</a>
+            <a href=".\admin.php">Admin</a>
             <a href=".\make_quiz.php">Quiz</a>
             <a href=".\add_ques.php"> Question</a>
-            <a href="..\Html\contact.html">Log Out</a>
+            <a href=".\logout.php">Log Out</a>
         </nav>
 
         <div class="icons">
