@@ -12,11 +12,11 @@ include("./header.php");
         <form action=""method="POST" class="t_center">
 
                 title: <br>
-                <input type="text"name="title" placeholder="Enter your name"> <br>
+                <input type="text"name="Title" placeholder="Enter your title"> <br>
                 
                 
                 Quiz Type: <br>
-                 <input type="password" name="Subject"placeholder="Enter Password"> <br>
+                 <input type="text" name="subject" placeholder="Enter Type"> <br>
                 
 
                  <br>Be sure you wanna create this quiz: <br><br>
@@ -29,8 +29,8 @@ include("./header.php");
 </section>
 <?php
 if(isset($_POST['submit'])){
-$subj=$_POST['Subject'];
-$title=$_POST['title'];
+$subj=$_POST['subject'];
+$title=$_POST['Title'];
     $sql22="select max(id) as id from quiz_table";
     if($res22=mysqli_query($con,$sql22)){
      $row=mysqli_fetch_assoc($res22);
@@ -38,7 +38,7 @@ $title=$_POST['title'];
  }
  else "error ";
 
- $sql3="INSERT INTO `quiz_table`(`id`, `q_id`, `subject`, `title`) VALUES ('$sno','$sno','$subj','$title')";
+ $sql3="INSERT INTO `quiz_table`(`id`, `t_id`, `subject`, `title`) VALUES ('$sno','$sno','$subj','$title')";
  $res=mysqli_query($con,$sql3);
 
 
