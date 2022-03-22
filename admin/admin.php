@@ -10,12 +10,15 @@ $sql="SELECT * FROM `teacher` ";
 <section class="mar25 ">
   <div class="tb">
       <h1>Teacher List</h1>
-      <h2><?php
+      <h2>
+      <a href="http://localhost/quiz_game-main/admin/add_admin.php" class="btn1">Add Teacher</a>
+    <?php
       if($count==0) echo "There is no pending admin.";
       ?>
       </h2>
   <table>
              <tr>
+             <th>SN</th>
                  <th>name</th>
                  <th>Email</th>
                  <th>Institute</th>
@@ -24,6 +27,7 @@ $sql="SELECT * FROM `teacher` ";
              </tr>          
 
              <?php
+             $sn=1;
       while($rows=mysqli_fetch_assoc($res))
       {
           $name=$rows['name'];
@@ -36,7 +40,8 @@ $sql="SELECT * FROM `teacher` ";
           
            <tr>
            <form action="" method="POST">
-               <td><?php echo $name; ?></td>
+           <td><?php echo $sn; ?></td>
+                <td><?php echo $name; ?></td>
                <td><?php echo $email; ?></td>
                <td><?php echo $inst; ?></td>   
                <!-- <td> <input type="submit" name="add" value="Accept" class="btn1"> -->
@@ -46,6 +51,7 @@ $sql="SELECT * FROM `teacher` ";
               <br>
            </tr>
            <?php
+           $sn++;
           }
         ?>
     </table>

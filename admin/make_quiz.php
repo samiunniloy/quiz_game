@@ -12,11 +12,11 @@ include("./header.php");
         <form action=""method="POST" class="t_center">
 
                 title: <br>
-                <input type="text"name="title" placeholder="Enter your name"> <br>
+                <input type="text"name="Title" placeholder="Enter your title"> <br>
                 
                 
                 Quiz Type: <br>
-                 <input type="password" name="Subject"placeholder="Enter Password"> <br>
+                 <input type="text" name="Type" placeholder="Enter Type"> <br>
                 
 
                  <br>Be sure you wanna create this quiz: <br><br>

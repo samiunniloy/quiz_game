@@ -517,11 +517,18 @@ table{
     border: 2px solid black ;
     
 }
+tr{
+    height: 100px;
+}
 th{
     font-size: 16px;
+    padding: 2%;
 }
 td{
     text-align: center;
+    height: 40px;
+    background-color: #ccc;
+    margin: 0;
 }
 select{
     background-color: white;

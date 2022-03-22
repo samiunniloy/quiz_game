@@ -21,7 +21,17 @@ include("../Html/conect.php");
 <body>
     <div class="log_in ">
         <br><br>
-        <h1 class="t_center" >LOG IN</h1>
+        <h1 class="t_center" >Teacher's LOG IN</h1>
+        <?php
+       if(isset($_SESSION['login'])){
+           echo $_SESSION['login'];
+           unset($_SESSION['login']);
+       }
+       if(isset($_SESSION['no-login'])){
+        echo $_SESSION['no-login'];
+        unset($_SESSION['no-login']);
+    }
+       ?>
         <br>
          <form action="" method="POST" class="t_center">
 
@@ -35,7 +45,6 @@ include("../Html/conect.php");
              <input type="password" name="password" placeholder="Enter Password"> <br><br>
  
              <input type="submit" value="Log In"  name="login" class="btn">
-             <!-- <a href="register.php" class="btn">Sign-Up</a> -->
              
          </form>
      </div>
@@ -48,11 +57,14 @@ include("../Html/conect.php");
    $sql="SELECT * FROM `teacher` WHERE name='$name' && password='$password'";
       $res=mysqli_query($con,$sql);
       if(mysqli_num_rows($res)>0){
+        $_SESSION['login'] = "<div>Log in Successfully.</div>";
+        $_SESSION['user'] = $name;
           header('location:index.php');
       }
    else{
-//        //  $_SESSION['login']="<div class='error text-center'>Name or Password didn't match.</div>";
+    $_SESSION['login'] = "<div>User Name or Password does not match.</div>";
       header('location:admin_login.php');
+
     }
 
    }

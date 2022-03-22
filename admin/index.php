@@ -5,7 +5,12 @@ include("./header.php")
 ?>
 <section class="mar25">
 <section class="menu" id="menu">
-
+<?php
+       if(isset($_SESSION['login'])){
+           unset($_SESSION['login']);
+       }
+     
+       ?>
 
 <div class="box-container">
 

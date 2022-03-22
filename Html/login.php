@@ -34,7 +34,8 @@ include("conect.php");
              <input type="password" name="password" placeholder="Enter Password"> <br><br>
  
              <input type="submit" value="Log In"  name="login" class="btn">
-             <a href="register.php" class="btn">Sign-Up</a>
+             <a href="register.php" class="btn">Sign-Up</a><br><br>
+             <a href="..\admin\admin_login.php" class="">Log in as a Teacher</a>
              
          </form>
      </div>

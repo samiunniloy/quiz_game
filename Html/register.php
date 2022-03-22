@@ -19,7 +19,7 @@ include("conect.php");
 <body>
     <div class="log_in ">
         <br><br>
-        <h1 class="t_center" >LOG IN</h1>
+        <h1 class="t_center" >Student Registration</h1>
         <br>
          <form action="" method="POST" class="t_center">
 
