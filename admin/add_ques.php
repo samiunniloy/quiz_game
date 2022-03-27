@@ -11,8 +11,14 @@ include("./header.php");
 <form action=""method="POST">
             
                     Subject: <br>
-                    <input type="text"name="subject" placeholder="Enter your Catagory"><br>
+                    <select name="subject" >
+                   <option value="a">HTML</option>
+                   <option value="b">CSS</option>
+                   <option value="c">SQL</option>
+                   <option value="d">PHP</option> 
                 
+                 </select> 
+</br>
                 
                     The Question:<br>
                     <input type="text"name="ques" placeholder="Enter Question Title"><br>
