@@ -16,11 +16,15 @@ include("./header.php");
                 
                 
                 Quiz Type: <br>
-<<<<<<< HEAD
-                 <input type="text" name="subject" placeholder="Enter Type"> <br>
-=======
-                 <input type="text" name="Type" placeholder="Enter Type"> <br>
->>>>>>> 93d7c83d56babe4b3df3222ad84cb112b7fb9050
+        
+                <select name="subject" >
+                   <option value="a">HTML</option>
+                   <option value="b">CSS</option>
+                   <option value="c">SQL</option>
+                   <option value="d">PHP</option> 
+                
+                 </select>
+</br>
                 
 
                  <br>Be sure you wanna create this quiz: <br><br>
