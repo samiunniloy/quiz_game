@@ -33,7 +33,7 @@ include("./header.php")
     <div class="box">
         <h1>000</h1>
         <h3>Total Quiz</h3>
-        <a href="http://localhost/quiz_game-main/admin/quiz.php" class="btn1">View Quiz</a>
+        <a href="http://localhost/quiz_game-main/Html/quiz.php" class="btn1">View Quiz</a>
     </div>
 
 
